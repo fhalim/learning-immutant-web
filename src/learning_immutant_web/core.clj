@@ -1,10 +1,13 @@
 (ns learning-immutant-web.core
-  (:require [immutant.web :as web])
+  (:require [immutant.web :as web]
+            [ring.util.response :refer (response resource-response content-type)]
+            [compojure.core     :refer (ANY GET defroutes)])
   (:gen-class))
 
-(defn app [request]
-  {:status 200
-   :body "Hello world!"})
+(defroutes routes
+  (GET "/" [] (resource-response "index.html" {:root 'public}))
+  (GET "/hello/:id"  [id] (str "Hello, " id)))
+(def app routes)
 
 (defn -main []
-  (web/run app))
+  (web/run-dmc app))

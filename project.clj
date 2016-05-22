@@ -4,8 +4,12 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.8.0"]
-                 [org.immutant/immutant "2.1.4"]]
+                 [org.immutant/immutant "2.1.4"]
+                 [ring/ring-devel "1.4.0"]
+                 [compojure "1.4.0"]]
   :main ^:skip-aot learning-immutant-web.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}}
-  :plugins [[lein-cljfmt "0.5.3"]])
+  :ring {:handler learning-immutant-web.core/app :main learning-immutant-web.core}
+  :plugins [[lein-cljfmt "0.5.3"]
+    [lein-ring "0.9.7"]])

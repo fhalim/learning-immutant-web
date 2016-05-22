@@ -1,36 +1,14 @@
-# learning_immutant_web
+# Usage
 
-FIXME: description
+## Development
 
-## Installation
+`$ lein ring server-headless`
 
-Download from http://example.com/FIXME.
+Then browse to http://localhost:3000
 
-## Usage
 
-FIXME: explanation
+## Deployment
 
-    $ java -jar learning_immutant_web-0.1.0-standalone.jar [args]
+`$ lein ring uberjar`
 
-## Options
-
-FIXME: listing of options this app accepts.
-
-## Examples
-
-...
-
-### Bugs
-
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
-
-## License
-
-Copyright © 2016 FIXME
-
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+`$ java -jar target/uberjar/learning_immutant_web-0.1.0-SNAPSHOT-standalone.jar`
